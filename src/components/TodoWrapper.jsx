@@ -8,16 +8,19 @@ export const TodoWrapper = () => {
   const todos = useSelector((state) => state.todos);
 
   return (
-    <div className="TodoWrapper">
-      <h1>Get Things Done!</h1>
-      <TodoForm />
-      {todos.map((todo) =>
-        todo.isEditing ? (
-          <EditTodoForm key={todo.id} task={todo} />
-        ) : (
-          <Todo task={todo} key={todo.id} />
-        )
-      )}
+    <div>
+      <h1 className="TodoList">To-do List</h1>
+      <div className="TodoWrapper">
+        <h1>Get Things Done!</h1>
+        <TodoForm />
+        {todos.map((todo) =>
+          todo.isEditing ? (
+            <EditTodoForm key={todo.id} task={todo} />
+          ) : (
+            <Todo task={todo} key={todo.id} />
+          )
+        )}
+      </div>
     </div>
   );
 };

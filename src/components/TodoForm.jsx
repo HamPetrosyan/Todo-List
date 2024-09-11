@@ -25,7 +25,7 @@ export const TodoForm = () => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button type="submit" className="todo-btn">
+      <button disabled={!value} type="submit" className="todo-btn">
         Add Task
       </button>
     </form>

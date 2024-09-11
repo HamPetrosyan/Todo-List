@@ -4,6 +4,15 @@ body {
   color: #3b2c5d;
 }
 
+.TodoList {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 200px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .TodoWrapper {
   max-width: 600px;
   margin: 20px auto;
@@ -57,6 +66,12 @@ h1 {
 
 .todo-btn:hover {
   background-color: #3b2c5d;
+}
+
+.todo-btn:disabled {
+  background-color: #4d347c;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .Todo {
