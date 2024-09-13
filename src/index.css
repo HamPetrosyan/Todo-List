@@ -50,6 +50,8 @@ h1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  caret-color: #4d347c;
 }
 
 .todo-input:focus {
