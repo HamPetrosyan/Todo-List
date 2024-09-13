@@ -45,13 +45,6 @@ h1 {
   border-radius: 6px;
   font-size: 1rem;
   outline: none;
-  transition: box-shadow outline 0.3s ease, border-color 0.3s ease;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  caret-color: #4d347c;
 }
 
 .todo-input:focus {
@@ -60,7 +53,6 @@ h1 {
   border-color: #6037a5;
   box-shadow: 0 0 10px rgba(96, 55, 165, 0.2);
 }
-
 
 .todo-btn {
   padding: 10px 25px;
@@ -94,9 +86,6 @@ h1 {
   border-radius: 4px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: appear 0.6s forwards ease;
 }
 
 .task {
@@ -132,9 +121,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.fade-out {
-  animation: disappear 0.3s forwards ease;
-}
 
 @keyframes fadeIn {
   0% {
@@ -157,30 +143,6 @@ h1 {
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes disappear {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(20px);
   }
 }
 
