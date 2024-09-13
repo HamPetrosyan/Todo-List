@@ -15,18 +15,21 @@ body {
 
 .TodoWrapper {
   max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  padding: 30px;
   background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 h1 {
-  font-size: 2rem;
-  color: #4d347c;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #6037a5;
   text-align: center;
+  margin-bottom: 30px;
+  animation: slideDown 1s ease-in-out;
 }
 
 .TodoForm {
@@ -37,31 +40,32 @@ h1 {
 
 .todo-input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
   font-size: 1rem;
-  color: #333;
-  box-sizing: border-box;
   outline: none;
+  transition: box-shadow outline 0.3s ease, border-color 0.3s ease;
 }
 
 .todo-input:focus {
   outline: auto;
   outline-color: #4d347c;
+  border-color: #6037a5;
+  box-shadow: 0 0 10px rgba(96, 55, 165, 0.2);
 }
 
 
 .todo-btn {
-  padding: 10px 20px;
+  padding: 10px 25px;
   border: none;
-  border-radius: 4px;
-  background-color: #4d347c;
+  border-radius: 6px;
+  background-color: #6037a5;
   color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
   margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
 }
 
 .todo-btn:hover {
@@ -84,6 +88,9 @@ h1 {
   border-radius: 4px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: appear 0.6s forwards ease;
 }
 
 .task {
@@ -117,4 +124,81 @@ h1 {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.fade-out {
+  animation: disappear 0.3s forwards ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 420px) {
+  .TodoList {
+    padding: 10px;
+    max-width: 150px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .TodoWrapper {
+    padding: 10px;
+  }
+
+  .todo-input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .todo-btn {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
 }

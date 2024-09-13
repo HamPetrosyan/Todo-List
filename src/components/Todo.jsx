@@ -4,17 +4,23 @@ import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { toggleCompleted, deleteTodo, editTodo } from "../redux/todoSlice";
 import { playSound } from "../utils/sound";
+import { useState } from "react";
 
 export const Todo = ({ task }) => {
   const dispatch = useDispatch();
+  const [isFading, setIsFading] = useState(false);
 
   const handleToggleComplete = () => {
     dispatch(toggleCompleted(task.id));
   };
 
   const handleDeleteTodo = () => {
-    dispatch(deleteTodo(task.id));
+    setIsFading(true);
     playSound("remove-task.wav", 0.1);
+
+    setTimeout(() => {
+      dispatch(deleteTodo(task.id));
+    }, 500);
   };
 
   const handleEditTodo = () => {
@@ -22,7 +28,7 @@ export const Todo = ({ task }) => {
   };
 
   return (
-    <div className="Todo">
+    <div className={`Todo ${isFading ? "fade-out" : ""}`}>
       <p
         onClick={handleToggleComplete}
         className={`task ${task.completed ? "completed" : ""}`}
