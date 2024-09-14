@@ -11,7 +11,6 @@ export const EditTodoForm = ({ task }) => {
     e.preventDefault();
     if (value.trim()) {
       dispatch(updateTodo({ id: task.id, updatedTask: value }));
-      playSound("add-task.wav");
       setValue("");
     }
   };

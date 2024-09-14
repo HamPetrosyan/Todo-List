@@ -14,7 +14,7 @@ export const Todo = ({ task }) => {
 
   const handleDeleteTodo = () => {
     dispatch(deleteTodo(task.id));
-    playSound("remove-task.wav", 0.1);
+    playSound("remove-task.wav", 0.2);
   };
 
   const handleEditTodo = () => {
