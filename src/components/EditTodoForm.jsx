@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateTodo } from "../redux/todoSlice";
-import { playSound } from "../utils/sound";
 
 export const EditTodoForm = ({ task }) => {
   const [value, setValue] = useState(task.task);
