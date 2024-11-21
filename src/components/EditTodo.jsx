@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateTodo } from "../redux/todoSlice";
 
-export const EditTodoForm = ({ task }) => {
+export const EditTodo = ({ task }) => {
   const [value, setValue] = useState(task.task);
   const dispatch = useDispatch();
 

@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import { Todo } from "./Todo";
 import { TodoForm } from "./TodoForm";
-import { EditTodoForm } from "./EditTodoForm";
+import { EditTodo } from "./EditTodo";
 
 export const TodoWrapper = () => {
   const todos = useSelector((state) => state.todos);
@@ -15,7 +15,7 @@ export const TodoWrapper = () => {
         <TodoForm />
         {todos.map((todo) =>
           todo.isEditing ? (
-            <EditTodoForm key={todo.id} task={todo} />
+            <EditTodo key={todo.id} task={todo} />
           ) : (
             <Todo task={todo} key={todo.id} />
           )
