@@ -120,7 +120,7 @@ h1 {
   color: #e74c3c;
 }
 
-.EditTodoForm {
+.EditTodo {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
